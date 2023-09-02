@@ -25,6 +25,10 @@ public class Product {
         String selectAllProduct="select id,name,price,description from product";
         return fectchproduct(selectAllProduct);
     }
+    public static ObservableList<Product> getAllproducts(String search){
+        String selectAllProduct="select id,name,price,description from product where name like '%"+search+"%'";
+        return fectchproduct(selectAllProduct);
+    }
     public static ObservableList<Product> fectchproduct(String Query){
         ObservableList<Product> data= FXCollections.observableArrayList();
         DBconnection dBconnection = new DBconnection();

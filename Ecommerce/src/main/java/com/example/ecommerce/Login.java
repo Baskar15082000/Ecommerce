@@ -17,6 +17,20 @@ public class Login {
         }
         return null;
     }
+    public customer customerslogin(String username){
+        String loginQuery = "select * from customers where email = '"+username+"'";
+        DBconnection conn = new DBconnection();
+        ResultSet rs=conn.getQueryTable(loginQuery);
+        try{
+            if(rs.next())
+                return new customer(rs.getInt("id"), rs.getString("name"),
+                        rs.getString("email"), rs.getString("mobile"));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 //    public static void main(String[] args) {
 //        Login login = new Login();

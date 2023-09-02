@@ -49,6 +49,13 @@ public class productlist {
         ObservableList<Product> data=Product.getAllproducts();
         return createTable(data);
     }
+   public VBox getallproduct(String str){
+        ObservableList<Product> sr=Product.getAllproducts(str);
+        if(sr.isEmpty() || sr==null){
+            return null;
+        }
+        return createTable(sr);
+    }
     public Product getselectedproduct(){
        return productTable.getSelectionModel().getSelectedItem();
     }

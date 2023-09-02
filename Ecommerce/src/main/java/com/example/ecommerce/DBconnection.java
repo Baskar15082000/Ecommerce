@@ -31,6 +31,18 @@ public class DBconnection {
         catch (Exception e){
             e.printStackTrace();
         }
+
+        return 0;
+    }
+    public int updateDatabasesign(String Query){
+        try{
+            Statement statement=getstatement();
+            return statement.executeUpdate(Query);
+        }
+
+        catch (SQLException e){
+            e.printStackTrace();
+        }
         return 0;
     }
 

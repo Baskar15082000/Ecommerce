@@ -22,7 +22,7 @@ public class order {
     }
     public static int placemutipleorder(customer customer, ObservableList<Product> productlist){
         String grouporderid="select max(group_order_id)+1 id from orders";
-        DBconnection dBconnection=new DBconnection();
+        DBconnection dBconnection = new DBconnection();
         try {
             ResultSet rs=dBconnection.getQueryTable(grouporderid);
             int count=0;
